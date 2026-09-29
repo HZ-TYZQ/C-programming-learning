@@ -1,0 +1,58 @@
+# C 编译生成的目标文件、预编译头和库
+*.o
+*.obj
+*.gch
+*.pch
+*.a
+*.lib
+*.so
+*.so.*
+*.dylib
+*.dll
+
+# 可执行文件（Linux 下自定义的无扩展名程序请输出到 build/ 或 builds/）
+*.exe
+*.out
+
+# 调试和增量编译产物
+*.pdb
+*.ilk
+*.idb
+*.dSYM/
+
+# 构建目录与 CMake 生成文件
+build/
+builds/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+compile_commands.json
+
+# IDE 本地配置和缓存
+.vscode/
+.idea/
+.vs/
+.cache/
+*.user
+*.suo
+
+# 编辑器临时文件和备份
+*.swp
+*.swo
+*~
+*.bak
+*.tmp
+
+# 操作系统生成的文件
+.DS_Store
+.DS_store
+._*
+.Spotlight-V100/
+.Trashes/
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+desktop.ini
+$RECYCLE.BIN/
