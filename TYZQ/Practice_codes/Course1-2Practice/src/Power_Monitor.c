@@ -1,11 +1,5 @@
 #include <stdio.h>
 
-int device_id;
-double voltage;
-double current;
-int samples;
-int invalid_samples;
-
 int is_safe(double voltage, double current, double valid_sample_rate) {
 
   if (voltage >= 3.0 && voltage <= 3.6 && current <= 0.50 &&
@@ -16,6 +10,12 @@ int is_safe(double voltage, double current, double valid_sample_rate) {
 }
 
 int main(void) {
+
+  int device_id;
+  double voltage;
+  double current;
+  int samples;
+  int invalid_samples;
 
   scanf("%d %lf %lf %d %d", &device_id, &voltage, &current, &samples,
         &invalid_samples);
