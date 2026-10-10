@@ -1,1 +1,2 @@
 今天开始学习 Git
+已经学会 git add、git commit、git push
