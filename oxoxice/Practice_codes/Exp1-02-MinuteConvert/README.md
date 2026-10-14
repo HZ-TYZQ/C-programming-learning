@@ -23,3 +23,19 @@ mkdir -p builds
 g++ src/minute_convert.cpp -o builds/minute_convert
 ./builds/minute_convert
 ```
+
+## 运行示例
+
+输入 `456`：
+
+```
+请输入分钟数：456
+456分钟可换算为：7小时36分钟
+```
+
+输入 `1896`：
+
+```
+请输入分钟数：1896
+1896分钟可换算为：31小时36分钟
+```
