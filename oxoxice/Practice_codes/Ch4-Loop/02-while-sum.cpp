@@ -1,3 +1,4 @@
+// 第2题：输入 n，求 1+2+...+n
 #include <iostream>
 using namespace std;
 

@@ -1,4 +1,4 @@
-// 动手1：用学生的答案
+// 第3题：成绩评级（A / B / C / D / F）
 #include <iostream>
 using namespace std;
 

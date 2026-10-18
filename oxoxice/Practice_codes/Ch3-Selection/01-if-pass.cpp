@@ -1,4 +1,4 @@
-// 动手1：用学生的答案 score>=60
+// 第1题：输入分数，判断及格还是不及格
 #include <iostream>
 using namespace std;
 

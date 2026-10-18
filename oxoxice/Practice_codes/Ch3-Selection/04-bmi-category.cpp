@@ -1,4 +1,4 @@
-// 动手2：BMI 分级（用学生的答案，接在第1题的完整程序上）
+// 第4题：BMI 分级（偏瘦 / 正常 / 超重 / 肥胖）
 #include<iostream>
 #include<iomanip>
 using namespace std;

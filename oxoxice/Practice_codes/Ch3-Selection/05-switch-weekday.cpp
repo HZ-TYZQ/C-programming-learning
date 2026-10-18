@@ -1,4 +1,4 @@
-// 动手1：用学生的答案
+// 第5题：输入 1~7，输出星期几
 #include <iostream>
 using namespace std;
 

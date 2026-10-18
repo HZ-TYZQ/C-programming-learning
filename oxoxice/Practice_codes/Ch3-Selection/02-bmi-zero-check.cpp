@@ -1,4 +1,4 @@
-// 动手2：用学生的答案 m == 0
+// 第2题：给 BMI 程序加“身高不能为 0”的保护
 #include<iostream>
 #include<iomanip>
 using namespace std;

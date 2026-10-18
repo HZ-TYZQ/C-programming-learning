@@ -1,4 +1,4 @@
-// 动手2：用学生的答案（补全成完整程序）
+// 第6题：输入月份，输出这个月有几天
 #include <iostream>
 using namespace std;
 

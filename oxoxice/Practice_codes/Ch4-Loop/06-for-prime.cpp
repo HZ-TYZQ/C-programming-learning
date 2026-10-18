@@ -1,4 +1,4 @@
-// 修好的版本：n % i == 0
+// 第6题：判断一个整数是不是素数
 #include <iostream>
 using namespace std;
 

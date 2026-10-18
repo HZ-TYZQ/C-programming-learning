@@ -1,4 +1,4 @@
-// 动手2：学生的答案
+// 第5题：求 1~100 的偶数之和
 #include <iostream>
 using namespace std;
 

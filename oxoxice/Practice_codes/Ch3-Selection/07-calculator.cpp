@@ -1,4 +1,4 @@
-// 综合项目：简易计算器
+// 综合项目：简易计算器（四则运算）
 // 用到了第3章学过的：if、else、switch、break、default、return
 #include <iostream>
 #include <iomanip>

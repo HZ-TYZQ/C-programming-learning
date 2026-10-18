@@ -1,4 +1,4 @@
-// 修法 A：用 return 直接结束程序
+// 第3题：输入 n，求 n 的阶乘（含非法输入检查）
 #include <iostream>
 using namespace std;
 
