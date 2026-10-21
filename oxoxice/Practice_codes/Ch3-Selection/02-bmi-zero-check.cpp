@@ -5,7 +5,6 @@ using namespace std;
 
 int main()
 {
-	cout << "2026114164蒋贞奇" << endl;
 
 	double m, w, bml;
 	cout << "请输入身高（米）:";

@@ -1,4 +1,4 @@
-﻿# oxoxice 的 C++ 练习
+# oxoxice 的 C++ 练习
 
 这里整理 C++ 的练习题。分两种组织方式：
 
@@ -14,6 +14,16 @@
 | [Exp1-03-DepositInterest](Exp1-03-DepositInterest/) | 三年期存款到期后的本息和 |
 | [Exp1-04-LetterASCII](Exp1-04-LetterASCII/) | 大写英文字母的 ASCII 码与字母序号 |
 | [Exp1-05-FineTuneCost](Exp1-05-FineTuneCost/) | 大模型微调算力费用的计算 |
+
+## 实验 2
+
+| 项目 | 内容 |
+| --- | --- |
+| [Exp2-01-GPUTemp](Exp2-01-GPUTemp/) | 按 85℃ 阈值判断 GPU 温度是否正常 |
+| [Exp2-02-TwoNumbers](Exp2-02-TwoNumbers/) | 单分支 `if` 求较小数、条件运算符求较大数 |
+| [Exp2-03-LetterCheck](Exp2-03-LetterCheck/) | 判断一个字符是否为英文字母 |
+| [Exp2-04-Divisible](Exp2-04-Divisible/) | 判断能否被 4 整除、是否不能被 7 整除 |
+| [Exp2-05-ShopDiscount](Exp2-05-ShopDiscount/) | 商品满 20 件打八折，并计算找零 |
 
 ## 章节练习
 
