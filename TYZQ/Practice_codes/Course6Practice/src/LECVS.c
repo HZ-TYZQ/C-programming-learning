@@ -241,6 +241,7 @@ int count_change_coins(int change) {
   if (change >= 50) {
     return 1 + count_change_coins(change - 50);
   }
+
   if (change >= 20) {
     return 1 + count_change_coins(change - 20);
   }
@@ -248,6 +249,7 @@ int count_change_coins(int change) {
   if (change >= 10) {
     return 1 + count_change_coins(change - 10);
   }
+
   if (change >= 5) {
     return 1 + count_change_coins(change - 5);
   }
