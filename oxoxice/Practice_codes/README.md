@@ -25,6 +25,17 @@
 | [Exp2-04-Divisible](Exp2-04-Divisible/) | 判断能否被 4 整除、是否不能被 7 整除 |
 | [Exp2-05-ShopDiscount](Exp2-05-ShopDiscount/) | 商品满 20 件打八折，并计算找零 |
 
+## 实验 3
+
+| 项目 | 内容 |
+| --- | --- |
+| [Exp3-01-VRAMJudge](Exp3-01-VRAMJudge/) | 按显存大小判断可运行的 AI 任务（`if-else` 阶梯） |
+| [Exp3-02-TriangleType](Exp3-02-TriangleType/) | 判断三条边能否构成三角形及类型（嵌套 `if`） |
+| [Exp3-03-GasTier](Exp3-03-GasTier/) | 阶梯气费计算（分段累加 + `setprecision`） |
+| [Exp3-04-SeasonSwitch](Exp3-04-SeasonSwitch/) | 判断月份所属季节（`switch` + case 穿透） |
+
+第 5 题（三天打鱼两天晒网，`switch` + 闰年）还在整理，之后补上。
+
 ## 章节练习
 
 | 目录 | 内容 | 题数 |
