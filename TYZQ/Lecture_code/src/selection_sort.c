@@ -46,27 +46,27 @@ void selectionSort(int arr[], int n, int order) {
     }
   */
   // Current
+  if (order != 1 && order != 2) {
+    printf("wrong order.\n");
+    return;
+  }
+
   for (int i = 0; i < n - 1; i++) {
 
-    if (order != 1 && order != 2) {
-      printf("wrong order.\n");
-      return;
-    }
+    int selectedIndex = i;
 
     for (int j = i + 1; j < n; j++) {
-
-      int selectedIndex = i;
 
       if ((order == 1 && arr[j] > arr[selectedIndex]) ||
           (order == 2 && arr[j] < arr[selectedIndex])) {
 
         selectedIndex = j;
       }
-
-      int temp = arr[selectedIndex];
-      arr[selectedIndex] = arr[i];
-      arr[i] = temp;
     }
+
+    int temp = arr[selectedIndex];
+    arr[selectedIndex] = arr[i];
+    arr[i] = temp;
   }
 }
 
