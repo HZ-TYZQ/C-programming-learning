@@ -4,3 +4,4 @@
 
 - [Practice_codes/](Practice_codes/)：各课的练习目录，源码放在各自的 `src/` 中，使用 `.c` 扩展名。
 - 练习的编译产物放在各练习目录的 `builds/` 中，该目录已被 Git 忽略。
+- HZ-TYZQ使用的系统是CachyOS
