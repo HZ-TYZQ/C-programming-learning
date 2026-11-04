@@ -19,15 +19,30 @@ int main(void) {
   int number;
 
   printf("Enter a three-digit number: ");
-  scanf("%d", &number);
 
-  /* TODO: Fill in the conditions for the if statements */
-  if (number < 100) {
-    printf("The number is too small.\n");
-  } else if (number > 999) {
-    printf("The number is too large.\n");
-  } else {
-    printf("Valid three-digit number.\n");
+  int result = scanf("%d", &number);
+
+  if (result == 0) {
+
+    printf("Invalid input.\n");
+    return 0;
   }
+
+  if (result == EOF) {
+
+    return 0;
+  }
+
+  if (result == 1) {
+    /* TODO: Fill in the conditions for the if statements */
+    if (number < 100) {
+      printf("The number is too small.\n");
+    } else if (number > 999) {
+      printf("The number is too large.\n");
+    } else {
+      printf("Valid three-digit number.\n");
+    }
+  }
+
   return 0;
 }
