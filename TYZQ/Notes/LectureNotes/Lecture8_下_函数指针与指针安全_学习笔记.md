@@ -1,4 +1,4 @@
-> **Clarification:** AI-generated content, reviewed by HZ-TYZQ (yes).
+> **Clarification:** AI-generated content, reviewed by HZ-TYZQ (not yet).
 
 # Lecture 8（下）学习笔记：Function Pointers、Callbacks、const 与 Dangling Pointers
 
@@ -19,7 +19,7 @@
 | Callbacks            | 已完成基础与编程练习       | `callbackPractice.c` 与 SLSMS 自定义排序                                                           |
 | `const` and Pointers | 已完成内存地址辨析         | 比较 `const int *p`、`int *const p`                                                                |
 | Dangling Pointers    | 已完成作用域和生命周期练习 | 内外层变量遮蔽与悬垂指针判断                                                                       |
-| Lecture 8 综合项目   | 主体完成                   | [`../../Practice_codes/Course8Practice/README.md`](../../Practice_codes/Course8Practice/README.md) |
+| Lecture 8 综合项目   | 主体完成                   | [SLSMS 综合实战项目笔记](SLSMS_综合实战项目笔记.md) |
 
 > **进度说明：** 上半部分旧笔记的“Reverse an Array 尚未完成／下次从这里开始”记录的是当时的进度；现在此项已经完成。历年真题统一安排在期末复习。
 
@@ -315,7 +315,7 @@ printf("%d\n", *p);  // 10
 - [ ] 历年真题：**期末复习**
 - [ ] 后续课程（Lecture 9 起）：按教学顺序继续
 
-**关联代码：** [`SLSMS.c`](../../Practice_codes/Course8Practice/src/SLSMS.c)；详见 [Course 8 Practice 笔记](../../Practice_codes/Course8Practice/README.md)。
+**关联代码：** [`SLSMS.c`](../../practiceCode/Course8Practice/src/SLSMS.c)；详见 [Course 8 Practice 笔记](SLSMS_综合实战项目笔记.md)。
 
 ## 8. 复习自测（不附答案）
 

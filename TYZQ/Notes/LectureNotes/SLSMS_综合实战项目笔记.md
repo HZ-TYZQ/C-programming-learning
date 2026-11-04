@@ -1,10 +1,10 @@
-> **Clarification:** AI-generated content, reviewed by HZ-TYZQ (yes).
+> **Clarification:** AI-generated content, reviewed by HZ-TYZQ (not yet).
 
 # Course 8 综合实战笔记：Smart Lab Sensor Management System（SLSMS）
 
 **课程：** UESTC1005 — Introductory Programming  
 **覆盖范围：** Lecture 1–8（主线）；Lecture 6 的递归仅作为可选扩展，**尚未集成**。  
-**项目源文件：** [`src/SLSMS.c`](src/SLSMS.c)  
+**项目源文件：** [`src/SLSMS.c`](../../practiceCode/Course8Practice/src/SLSMS.c)  
 **整理日期：** 2026-11-02  
 **说明：** 本文依据仓库里实际存在的 `SLSMS.c` 及本次逐阶段学习、代码审查和集成测试整理；**只整理笔记，不修改学生编写的 `.c` 源代码**。本项目不是 Lab 作业，也不是历年真题。
 
@@ -316,4 +316,4 @@ gcc -std=c11 -Wall -Wextra -Wpedantic -Werror \
 5. 为什么排序后同一读数的搜索下标可能改变，而平均值不变？
 6. 为什么 `bubbleSort(data, count, shouldSwapAscending)` 正确，而传 `shouldSwapAscending(10,20)` 不正确？
 
-**继续学习：** 代码保留在 [`src/SLSMS.c`](src/SLSMS.c)；Lecture 8 后半部分的理论复习见 [`Lecture8_下_函数指针与指针安全_学习笔记.md`](../../Notes/LectureNotes/Lecture8_下_函数指针与指针安全_学习笔记.md)。
+**继续学习：** 代码保留在 [`src/SLSMS.c`](../../practiceCode/Course8Practice/src/SLSMS.c)；Lecture 8 后半部分的理论复习见 [`Lecture8_下_函数指针与指针安全_学习笔记.md`](../../Notes/LectureNotes/Lecture8_下_函数指针与指针安全_学习笔记.md)。

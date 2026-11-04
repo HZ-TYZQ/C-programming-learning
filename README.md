@@ -1,3 +1,5 @@
+> **Clarification:** AI-generated content, reviewed by HZ-TYZQ (not yet).
+
 # C / C++ 合作学习项目
 
 ## 这是什么
@@ -33,5 +35,5 @@ Git 操作可以参考 [oxoxice 的 Git 上手练习](oxoxice/GitGuidance.md)。
 除另有说明外，本仓库由 HZ-TYZQ 和 oxoxice 原创且有权授权的内容采用 [MIT 许可证](LICENSE)。
 课程提供的代码、模板及其他第三方内容不由仓库维护者另行授予 MIT 许可，其版权与授权条款以原权利人的声明为准。
 
-[TYZQ/Lab_code/](TYZQ/Lab_code/) 包含基于课程 Base Code 完成的实验代码，不能将该目录整体视为已获 MIT 授权。
-具体来源与当前授权状态见 [Lab_code 版权与授权说明](TYZQ/Lab_code/NOTICE.md)。
+[TYZQ/labCode/](TYZQ/labCode/) 包含基于课程 Base Code 完成的实验代码，不能将该目录整体视为已获 MIT 授权。
+具体来源与当前授权状态见 [labCode 版权与授权说明](TYZQ/labCode/NOTICE.md)。
