@@ -17,13 +17,59 @@
 
 int main(void) {
   int number;
+  int input;
+  int ch;
 
-  printf("Enter a three-digit number: ");
-  scanf("%d", &number);
+  while (1) {
 
-  while (number < 100 || number > 999) {
-    printf("Invalid input. Try again: ");
-    scanf("%d", &number);
+    printf("Enter a three-digit number: ");
+
+    int result = scanf("%d", &input);
+
+    if (result == 0) {
+
+      printf("Invalid input.\n");
+
+      while ((ch = getchar()) != '\n' && ch != EOF) {
+      }
+
+      if (ch == EOF) {
+
+        break;
+      }
+
+      continue;
+    }
+
+    else if (result == 1) {
+
+      if (input >= 100 && input <= 999) {
+
+        printf("The number is valid!\n");
+        number = input;
+      }
+
+      else {
+
+        printf("The number should be between 100-999.\n");
+        while ((ch = getchar()) != '\n' && ch != EOF) {
+        }
+
+        if (ch == EOF) {
+
+          break;
+        }
+
+        continue;
+      }
+
+      break;
+    }
+
+    else {
+
+      break;
+    }
   }
 
   return 0;
