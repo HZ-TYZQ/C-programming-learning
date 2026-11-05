@@ -28,4 +28,9 @@ int findByName(const struct Student students[], int count, const char name[]);
 void calculateStats(const struct Student *student, int *total, double *average,
                     int *maximum, int *minimum);
 
+/* Student Management */
+
+int addStudent(struct Student students[], int *count,
+               const struct Student *newStudent);
+
 #endif /* STUDENT_H */

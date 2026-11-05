@@ -23,3 +23,24 @@ void printAll(const struct Student *students, int count) {
     printStudent(students + i);
   }
 }
+
+int addStudent(struct Student students[], int *count,
+               const struct Student *newStudent) {
+
+  if (*count >= MAX_STUDENTS) {
+
+    return 0;
+  }
+
+  for (int i = 0; i < *count; i++) {
+
+    if ((students + i)->id == newStudent->id) {
+
+      return -1;
+    }
+  }
+
+  students[*count] = *newStudent;
+  *count += 1;
+  return 1;
+}
