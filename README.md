@@ -1,5 +1,3 @@
-> **Clarification:** AI-generated content, reviewed by HZ-TYZQ (not yet).
-
 # C / C++ 合作学习项目
 
 ## 这是什么
