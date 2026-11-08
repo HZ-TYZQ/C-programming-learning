@@ -34,6 +34,15 @@
 | [Exp3-03-GasTier](Exp3-03-GasTier/) | 阶梯气费计算（分段累加 + `setprecision`） |
 | [Exp3-04-SeasonSwitch](Exp3-04-SeasonSwitch/) | 判断月份所属季节（`switch` + case 穿透） |
 
+## 实验 4
+
+| 项目 | 内容 |
+| --- | --- |
+| [Exp4-01-BinaryToDecimal](Exp4-01-BinaryToDecimal/) | 二进制整数转十进制（`while`） |
+| [Exp4-02-ConfidenceStats](Exp4-02-ConfidenceStats/) | AI 推理置信度的平均值与达标次数（`do-while`） |
+| [Exp4-03-CongruenceRange](Exp4-03-CongruenceRange/) | 区间内同时满足三个同余条件的整数（`for`） |
+| [Exp4-04-ProductionDoubling](Exp4-04-ProductionDoubling/) | 产值翻一番需要的年份（复利迭代） |
+| [Exp4-05-SampleConsumption](Exp4-05-SampleConsumption/) | 每天取走一半多 1 条，取完样本需要的天数 |
 第 5 题（三天打鱼两天晒网，`switch` + 闰年）还在整理，之后补上。
 
 ## 章节练习
