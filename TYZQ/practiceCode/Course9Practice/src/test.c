@@ -66,5 +66,9 @@ int main(void)
   printf("Search 999:\n");
   printf("%d\n", findById(students, count, 999));
 
+  printf("%d\n", findByName(students, count, "Mia"));
+  printf("%d\n", findByName(students, count, "Unknown"));
+  printf("%d\n", findByName(students, count, "mia"));
+
   return 0;
 }

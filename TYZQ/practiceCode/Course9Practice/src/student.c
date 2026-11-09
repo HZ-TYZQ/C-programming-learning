@@ -65,3 +65,15 @@ int findById(const struct Student students[], int count, int id)
 
   return -1;
 }
+
+int findByName(const struct Student students[], int count, const char name[])
+{
+  for (int i = 0; i < count; i++)
+  {
+    if (strcmp(name, students[i].name) == 0)
+    {
+      return i;
+    }
+  }
+  return -1;
+}

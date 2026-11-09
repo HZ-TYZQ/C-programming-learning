@@ -12,7 +12,7 @@ int main(void)
   {
 
     printf("========== SRMS ==========\n1. Add Student\n2. Display All "
-           "Students\n3. Search Student by ID\n0. "
+           "Students\n3. Search Student by ID\n4. Search Student by Name\n0. "
            "Exit\n==========================\n");
 
     // Enter choice.
@@ -111,6 +111,28 @@ int main(void)
       }
 
       targetIndex = findById(students, count, targetId);
+      if (targetIndex == -1)
+      {
+        printf("Student not found.\n");
+      }
+      else
+      {
+        printStudent(&students[targetIndex]);
+      }
+
+      break;
+    }
+    case 4:
+    {
+      char targetName[NAME_SIZE];
+
+      if (readString("Student name: ", targetName, NAME_SIZE) == NULL)
+      // sizeof(targetName) is better
+      {
+        return 0;
+      }
+
+      int targetIndex = findByName(students, count, targetName);
       if (targetIndex == -1)
       {
         printf("Student not found.\n");
