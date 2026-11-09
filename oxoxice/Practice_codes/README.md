@@ -51,9 +51,18 @@
 | --- | --- | --- |
 | [Ch3-Selection](Ch3-Selection/) | 第 3 章 选择结构：`if` / `else if` / `switch` / 嵌套 `if` | 7 |
 | [Ch4-Loop](Ch4-Loop/) | 第 4 章 循环结构：`while` / `for` | 6 |
+| [Ch5-Function](Ch5-Function/) | 第 5 章 函数：函数定义 / 值传递 / 递归 | 6 |
 
 每个目录的 `README.md` 里列出了题目清单和易错点。
 
+函数这一章的笔记与踩坑记录见 [../Notes/](../Notes/)。
+
+
+## 期中复习卷
+
+| 目录 | 内容 |
+| --- | --- |
+| [Review-01-Midterm](Review-01-Midterm/) | 第 1~5 章综合复习卷：快速判断 / 读代码写输出 / 找错并改正 / 编程题，附答案与逐题解析 |
 
 ## 综合练习（作业）
 
