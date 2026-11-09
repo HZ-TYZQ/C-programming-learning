@@ -12,7 +12,8 @@ int main(void)
   {
 
     printf("========== SRMS ==========\n1. Add Student\n2. Display All "
-           "Students\n0. Exit\n==========================\n");
+           "Students\n3. Search Student by ID\n0. "
+           "Exit\n==========================\n");
 
     // Enter choice.
 
@@ -99,6 +100,28 @@ int main(void)
 
       break;
 
+    case 3:
+    {
+      int targetId;
+      int targetIndex;
+
+      if (!readInt("Target ID: ", &targetId))
+      {
+        return 0;
+      }
+
+      targetIndex = findById(students, count, targetId);
+      if (targetIndex == -1)
+      {
+        printf("Student not found.\n");
+      }
+      else
+      {
+        printStudent(&students[targetIndex]);
+      }
+
+      break;
+    }
     case 0:
 
       printf("Goodbye!\n");
