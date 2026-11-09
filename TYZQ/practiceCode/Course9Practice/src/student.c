@@ -77,3 +77,30 @@ int findByName(const struct Student students[], int count, const char name[])
   }
   return -1;
 }
+
+void calculateStats(const struct Student *student, int *total, double *average,
+                    int *maximum, int *minimum)
+{
+  *total = 0;
+  for (int i = 0; i < SUBJECT_COUNT; i++)
+  {
+    *total += student->scores[i];
+  }
+
+  *average = (double)*total / SUBJECT_COUNT;
+
+  *maximum = student->scores[0];
+  *minimum = student->scores[0];
+
+  for (int i = 1; i < SUBJECT_COUNT; i++)
+  {
+    if (student->scores[i] > *maximum)
+    {
+      *maximum = student->scores[i];
+    }
+    if (student->scores[i] < *minimum)
+    {
+      *minimum = student->scores[i];
+    }
+  }
+}

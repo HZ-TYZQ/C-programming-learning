@@ -70,5 +70,19 @@ int main(void)
   printf("%d\n", findByName(students, count, "Unknown"));
   printf("%d\n", findByName(students, count, "mia"));
 
+  struct Student alice = {104, "Alice", {95, 98, 100}};
+
+  int total;
+  double average;
+  int maximum;
+  int minimum;
+
+  calculateStats(&alice, &total, &average, &maximum, &minimum);
+
+  printf("Total: %d\n", total);
+  printf("Average: %.2f\n", average);
+  printf("Maximum: %d\n", maximum);
+  printf("Minimum: %d\n", minimum);
+
   return 0;
 }
