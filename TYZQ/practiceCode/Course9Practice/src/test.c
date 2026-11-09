@@ -1,7 +1,8 @@
 #include "student.h"
 #include <stdio.h>
 
-int main(void) {
+int main(void)
+{
 
   struct Student students[MAX_STUDENTS] = {
       {101, "Mia", {80, 90, 100}},
@@ -36,10 +37,12 @@ int main(void) {
   int fullCount = 0;
   int allFilled = 1;
 
-  for (int i = 0; i < MAX_STUDENTS; i++) {
+  for (int i = 0; i < MAX_STUDENTS; i++)
+  {
     struct Student s = {200 + i, "Filler", {60, 70, 80}};
 
-    if (addStudent(full, &fullCount, &s) != 1) {
+    if (addStudent(full, &fullCount, &s) != 1)
+    {
       allFilled = 0;
     }
   }
@@ -57,6 +60,29 @@ int main(void) {
 
   printf("last slot unchanged: ");
   printStudent(&full[MAX_STUDENTS - 1]);
+
+  printf("Search 102:\n");
+  printf("%d\n", findById(students, count, 102));
+  printf("Search 999:\n");
+  printf("%d\n", findById(students, count, 999));
+
+  printf("%d\n", findByName(students, count, "Mia"));
+  printf("%d\n", findByName(students, count, "Unknown"));
+  printf("%d\n", findByName(students, count, "mia"));
+
+  struct Student alice = {104, "Alice", {95, 98, 100}};
+
+  int total;
+  double average;
+  int maximum;
+  int minimum;
+
+  calculateStats(&alice, &total, &average, &maximum, &minimum);
+
+  printf("Total: %d\n", total);
+  printf("Average: %.2f\n", average);
+  printf("Maximum: %d\n", maximum);
+  printf("Minimum: %d\n", minimum);
 
   return 0;
 }

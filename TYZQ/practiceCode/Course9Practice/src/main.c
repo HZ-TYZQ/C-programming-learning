@@ -12,7 +12,9 @@ int main(void)
   {
 
     printf("========== SRMS ==========\n1. Add Student\n2. Display All "
-           "Students\n0. Exit\n==========================\n");
+           "Students\n3. Search Student by ID\n4. Search Student by Name\n5. "
+           "View Student Statistics\n0. "
+           "Exit\n==========================\n");
 
     // Enter choice.
 
@@ -99,6 +101,81 @@ int main(void)
 
       break;
 
+    case 3:
+    {
+      int targetId;
+      int targetIndex;
+
+      if (!readInt("Target ID: ", &targetId))
+      {
+        return 0;
+      }
+
+      targetIndex = findById(students, count, targetId);
+      if (targetIndex == -1)
+      {
+        printf("Student not found.\n");
+      }
+      else
+      {
+        printStudent(&students[targetIndex]);
+      }
+
+      break;
+    }
+    case 4:
+    {
+      char targetName[NAME_SIZE];
+
+      if (readString("Student name: ", targetName, NAME_SIZE) == NULL)
+      // sizeof(targetName) is better
+      {
+        return 0;
+      }
+
+      int targetIndex = findByName(students, count, targetName);
+      if (targetIndex == -1)
+      {
+        printf("Student not found.\n");
+      }
+      else
+      {
+        printStudent(&students[targetIndex]);
+      }
+
+      break;
+    }
+    case 5:
+    {
+      int total;
+      double average;
+      int maximum;
+      int minimum;
+      int targetId;
+      int targetIndex;
+
+      if (!readInt("Student ID: ", &targetId))
+      {
+        return 0;
+      }
+
+      targetIndex = findById(students, count, targetId);
+      if (targetIndex == -1)
+      {
+        printf("Student not found.\n");
+        break;
+      }
+
+      calculateStats(&students[targetIndex], &total, &average, &maximum,
+                     &minimum);
+
+      printf("Total: %d\n", total);
+      printf("Average: %.2f\n", average);
+      printf("Maximum: %d\n", maximum);
+      printf("Minimum: %d\n", minimum);
+
+      break;
+    }
     case 0:
 
       printf("Goodbye!\n");
