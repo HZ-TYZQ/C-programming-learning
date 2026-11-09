@@ -1,5 +1,3 @@
-> **Clarification:** AI-generated content, reviewed by HZ-TYZQ (not yet).
-
 # HZ-TYZQ 的 C 语言学习目录
 
 这里记录 HZ-TYZQ 的 C 语言练习、学习笔记和问题总结。
