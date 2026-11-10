@@ -12,6 +12,7 @@
 | [04-factorial.cpp](04-factorial.cpp) | 阶乘的递归实现 | 递归的终止条件与递推关系 |
 | [05-gcd-recursive.cpp](05-gcd-recursive.cpp) | 辗转相除法的递归版 | 同一问题的循环写法与递归写法对照 |
 | [06-fibonacci.cpp](06-fibonacci.cpp) | 斐波那契的递归版与循环版 | 重叠子问题导致的指数级开销 |
+| [07-perfect-number.cpp](07-perfect-number.cpp) | 输出 1~10000 内所有完全数 | 函数拆分、边界条件、循环上界 |
 
 ## 函数三要素
 

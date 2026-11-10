@@ -45,6 +45,15 @@
 | [Exp4-03-CongruenceRange](Exp4-03-CongruenceRange/) | 区间内同时满足三个同余条件的整数（`for`） |
 | [Exp4-04-ProductionDoubling](Exp4-04-ProductionDoubling/) | 产值翻一番需要的年份（复利迭代） |
 | [Exp4-05-SampleConsumption](Exp4-05-SampleConsumption/) | 每天取走一半多 1 条，取完样本需要的天数 |
+## 实验 5
+
+| 项目 | 内容 |
+| --- | --- |
+| [Exp5-01-PrimeFactorization](Exp5-01-PrimeFactorization/) | 合数的质因数分解（单层循环） |
+| [Exp5-02-CharTriangle](Exp5-02-CharTriangle/) | 按行数和字符输出右对齐三角形（嵌套循环） |
+| [Exp5-03-NineNineTable](Exp5-03-NineNineTable/) | 九九乘法表（右对齐，嵌套循环） |
+
+第 4 题（搬砖问题）和第 5 题（区间回文数）还在整理，之后补上。
 ## 章节练习
 
 | 目录 | 内容 | 题数 |
@@ -63,6 +72,7 @@
 | 目录 | 内容 |
 | --- | --- |
 | [Review-01-Midterm](Review-01-Midterm/) | 第 1~5 章综合复习卷：快速判断 / 读代码写输出 / 找错并改正 / 编程题，附答案与逐题解析 |
+| [Review-02-Midterm](Review-02-Midterm/) | 按期中考纲缺口出题：累和累积 / 数论 / 进制转换 / 枚举 / 图形，共 11 题（已完成第 1~4 题：级数求和） |
 
 ## 综合练习（作业）
 

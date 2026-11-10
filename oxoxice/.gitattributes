@@ -1,0 +1,5 @@
+# 让 GitHub 的语言统计只统计真正的代码
+# GitHub 用 Linguist 统计语言占比，默认把 .md 也算一种语言（Markdown），
+# 笔记和说明文档一多，就会把 C++ 的占比稀释掉。
+# 下面这行告诉 Linguist：.md 属于文档，不计入语言统计。
+*.md linguist-documentation
