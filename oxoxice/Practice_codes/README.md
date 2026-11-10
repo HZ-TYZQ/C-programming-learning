@@ -45,6 +45,15 @@
 | [Exp4-03-CongruenceRange](Exp4-03-CongruenceRange/) | 区间内同时满足三个同余条件的整数（`for`） |
 | [Exp4-04-ProductionDoubling](Exp4-04-ProductionDoubling/) | 产值翻一番需要的年份（复利迭代） |
 | [Exp4-05-SampleConsumption](Exp4-05-SampleConsumption/) | 每天取走一半多 1 条，取完样本需要的天数 |
+## 实验 5
+
+| 项目 | 内容 |
+| --- | --- |
+| [Exp5-01-PrimeFactorization](Exp5-01-PrimeFactorization/) | 合数的质因数分解（单层循环） |
+| [Exp5-02-CharTriangle](Exp5-02-CharTriangle/) | 按行数和字符输出右对齐三角形（嵌套循环） |
+| [Exp5-03-NineNineTable](Exp5-03-NineNineTable/) | 九九乘法表（右对齐，嵌套循环） |
+
+第 4 题（搬砖问题）和第 5 题（区间回文数）还在整理，之后补上。
 ## 章节练习
 
 | 目录 | 内容 | 题数 |
