@@ -1,0 +1,66 @@
+#include "device.h"
+#include <string.h>
+
+int findDeviceById(const struct Device *device, int count, int targetId)
+{
+  for (int i = 0; i < count; i++)
+  {
+    if ((device + i)->id == targetId)
+    {
+      return i;
+    }
+  }
+  return -1;
+}
+
+int registerDevice(struct Device *devices, int *count, int id, const char *name)
+{
+  if (*count >= MAX_DEVICES)
+  {
+    return -1;
+  }
+  else if (id <= 0)
+  {
+    return -2;
+  }
+  else if (findDeviceById(devices, *count, id) != -1)
+  {
+    return -3;
+  }
+  else if (strlen(name) > NAME_SIZE - 1)
+  {
+    return -4;
+  }
+  else if (strspn(name, " \t\n\r\v\f") == strlen(name))
+  {
+    return -5;
+  }
+
+  struct Device temp = {0};
+  temp.id = id;
+  strcpy(temp.name, name);
+  temp.readingCount = 0;
+  temp.flags = ONLINE;
+
+  devices[*count] = temp;
+  (*count)++;
+
+  return 0;
+}
+
+void toggleOnline(struct Device *device)
+{
+  device->flags ^= ONLINE;
+}
+
+void setMaintenance(struct Device *device, int enabled)
+{
+  if (enabled == 1)
+  {
+    device->flags |= MAINTENANCE;
+  }
+  else if (enabled == 0)
+  {
+    device->flags &= (~MAINTENANCE);
+  }
+}
