@@ -1,5 +1,6 @@
 #include "device.h"
 #include <assert.h>
+#include <stdio.h>
 #include <string.h>
 
 static void test_register_success(void)
@@ -161,6 +162,31 @@ static void test_set_maintenance(void)
   assert(devices->flags == (ONLINE | HAS_DATA));
 }
 
+static void test_print_flags(void)
+{
+  // Arrange
+  struct Device devices[MAX_DEVICES] = {0};
+  devices[0].flags = ONLINE | MAINTENANCE | HAS_DATA;
+
+  // Act
+  printf("Expected: 00001011\n");
+  printFlags(devices->flags);
+
+  // Arrange
+  devices[0].flags = 0x10Bu;
+
+  // Act
+  printf("Expected: 00001011\n");
+  printFlags(devices->flags);
+
+  // Arrange
+  devices[0].flags = 0u;
+
+  // Act
+  printf("Expected: 00000000\n");
+  printFlags(devices->flags);
+}
+
 int main(void)
 {
   test_register_success();
@@ -168,4 +194,5 @@ int main(void)
   test_register_invalid_name();
   test_toggle_online();
   test_set_maintenance();
+  test_print_flags();
 }

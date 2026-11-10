@@ -42,4 +42,6 @@ void setMaintenance(struct Device *device, int enabled);
 
 void printFlags(unsigned int flags);
 
+int addReading(struct Device *device, int value);
+
 #endif /* DEVICE_H */

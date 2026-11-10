@@ -74,3 +74,38 @@ void printFlags(unsigned int flags)
   }
   printf("\n");
 }
+
+int addReading(struct Device *device, int value)
+{
+  if ((device->flags & ONLINE) != ONLINE)
+  {
+    return -1;
+  }
+  else if ((device->flags & MAINTENANCE) == MAINTENANCE)
+  {
+    return -2;
+  }
+  else if (device->readingCount >= MAX_READINGS)
+  {
+    return -3;
+  }
+  else if (value < 0 || value > 100)
+  {
+    return -4;
+  }
+
+  device->readings[device->readingCount] = value;
+  device->readingCount++;
+
+  device->flags |= HAS_DATA;
+  if (value >= 10 && value <= 90)
+  {
+    device->flags &= (~ALARM);
+  }
+  else
+  {
+    device->flags |= ALARM;
+  }
+
+  return 0;
+}
