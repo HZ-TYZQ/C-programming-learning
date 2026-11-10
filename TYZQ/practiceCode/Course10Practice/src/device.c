@@ -1,4 +1,5 @@
 #include "device.h"
+#include <stdio.h>
 #include <string.h>
 
 int findDeviceById(const struct Device *device, int count, int targetId)
@@ -63,4 +64,13 @@ void setMaintenance(struct Device *device, int enabled)
   {
     device->flags &= (~MAINTENANCE);
   }
+}
+
+void printFlags(unsigned int flags)
+{
+  for (int i = 7; i >= 0; i--)
+  {
+    printf("%u", (flags >> i) & 1u);
+  }
+  printf("\n");
 }

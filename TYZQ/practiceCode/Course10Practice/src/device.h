@@ -40,6 +40,6 @@ void toggleOnline(struct Device *device);
 
 void setMaintenance(struct Device *device, int enabled);
 
-void printfFlags(unsigned int flags);
+void printFlags(unsigned int flags);
 
 #endif /* DEVICE_H */
