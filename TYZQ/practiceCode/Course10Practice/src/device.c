@@ -109,3 +109,35 @@ int addReading(struct Device *device, int value)
 
   return 0;
 }
+
+struct ReadingStats calculateStats(const struct Device *device)
+{
+  struct ReadingStats stats = {0};
+
+  if (device->readingCount == 0)
+  {
+    return stats;
+  }
+
+  stats.count = device->readingCount;
+  stats.minimum = device->readings[0];
+  stats.maximum = device->readings[0];
+  stats.sum = device->readings[0];
+
+  for (int i = 1; i < device->readingCount; i++)
+  {
+    stats.sum += device->readings[i];
+    if (stats.maximum < device->readings[i])
+    {
+      stats.maximum = device->readings[i];
+    }
+    if (stats.minimum > device->readings[i])
+    {
+      stats.minimum = device->readings[i];
+    }
+  }
+
+  stats.average = (double)stats.sum / stats.count;
+
+  return stats;
+}

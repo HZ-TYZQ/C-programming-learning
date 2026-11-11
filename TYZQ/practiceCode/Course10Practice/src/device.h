@@ -44,4 +44,6 @@ void printFlags(unsigned int flags);
 
 int addReading(struct Device *device, int value);
 
+struct ReadingStats calculateStats(const struct Device *device);
+
 #endif /* DEVICE_H */
