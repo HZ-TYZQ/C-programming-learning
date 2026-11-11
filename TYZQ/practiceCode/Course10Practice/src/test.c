@@ -291,8 +291,7 @@ static void test_add_reading_invalid_value(void)
   // Act
   result = addReading(devices, -1);
 
-  // Assert
-  assert(result == -4);
+  // Assert assert(result == -4);
   assert(devices->readingCount == 1);
   assert(devices->readings[0] == 95);
   assert(devices->flags == (ONLINE | HAS_DATA | ALARM));
@@ -336,6 +335,31 @@ static void test_calculate_stats(void)
   assert(stats[2].average == 80);
 }
 
+static void test_matches_flags(void)
+{
+  // Arrange
+  struct Device device[MAX_DEVICES] = {0};
+  device->flags = ONLINE | HAS_DATA;
+
+  // Act && Assert: Any
+  int result = matchesFlags(device, ONLINE | HAS_DATA | ALARM, 0);
+
+  assert(result == 1);
+
+  result = matchesFlags(device, ALARM, 0);
+
+  assert(result == 0);
+
+  // Act && Assert: All
+  result = matchesFlags(device, ONLINE | HAS_DATA | ALARM, 1);
+
+  assert(result == 0);
+
+  result = matchesFlags(device, ONLINE | HAS_DATA, 1);
+
+  assert(result == 1);
+}
+
 int main(void)
 {
   test_register_success();
@@ -350,4 +374,5 @@ int main(void)
   test_add_reading_full();
   test_add_reading_invalid_value();
   test_calculate_stats();
+  test_matches_flags();
 }

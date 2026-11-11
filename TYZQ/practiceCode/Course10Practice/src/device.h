@@ -46,4 +46,6 @@ int addReading(struct Device *device, int value);
 
 struct ReadingStats calculateStats(const struct Device *device);
 
+int matchesFlags(const struct Device *device, unsigned int mask,
+                 int requireAll);
 #endif /* DEVICE_H */

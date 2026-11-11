@@ -141,3 +141,29 @@ struct ReadingStats calculateStats(const struct Device *device)
 
   return stats;
 }
+
+int matchesFlags(const struct Device *device, unsigned int mask, int requireAll)
+{
+  if (requireAll == 1)
+  {
+    if ((device->flags & mask) != mask)
+    {
+      return 0;
+    }
+    else
+    {
+      return 1;
+    }
+  }
+  else
+  {
+    if ((device->flags & mask) == 0)
+    {
+      return 0;
+    }
+    else
+    {
+      return 1;
+    }
+  }
+}
