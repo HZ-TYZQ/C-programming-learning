@@ -291,7 +291,8 @@ static void test_add_reading_invalid_value(void)
   // Act
   result = addReading(devices, -1);
 
-  // Assert assert(result == -4);
+  // Assert
+  assert(result == -4);
   assert(devices->readingCount == 1);
   assert(devices->readings[0] == 95);
   assert(devices->flags == (ONLINE | HAS_DATA | ALARM));
