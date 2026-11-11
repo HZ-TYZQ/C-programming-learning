@@ -231,6 +231,73 @@ static void test_add_reading_offline(void)
   assert(devices->flags == (HAS_DATA | ALARM));
 }
 
+static void test_add_reading_maintenance(void)
+{
+  // Arrange
+  struct Device devices[MAX_DEVICES] = {0};
+  devices[0].flags = MAINTENANCE | ONLINE | HAS_DATA | ALARM;
+  devices[0].readings[0] = 95;
+  devices[0].readingCount = 1;
+
+  // Act
+  int result = addReading(devices, 50);
+
+  // Assert
+  assert(result == -2);
+  assert(devices->readingCount == 1);
+  assert(devices->readings[0] == 95);
+  assert(devices->flags == (MAINTENANCE | ONLINE | HAS_DATA | ALARM));
+}
+
+static void test_add_reading_full(void)
+{
+  // Arrange
+  struct Device devices[MAX_DEVICES] = {0};
+  devices[0].flags = ONLINE;
+  devices[0].readingCount = 0;
+
+  for (int i = 0; i < MAX_READINGS; i++)
+  {
+    addReading(devices, i * 10);
+  }
+
+  // Act
+  int result = addReading(devices, 50);
+
+  // Assert
+  assert(result == -3);
+  assert(devices->readingCount == 10);
+  assert(devices->readings[9] == 90);
+  assert(devices->flags == (ONLINE | HAS_DATA));
+}
+
+static void test_add_reading_invalid_value(void)
+{
+  // Arrange
+  struct Device devices[MAX_DEVICES] = {0};
+  devices[0].flags = HAS_DATA | ONLINE | ALARM;
+  devices[0].readings[0] = 95;
+  devices[0].readingCount = 1;
+
+  // Act
+  int result = addReading(devices, 999);
+
+  // Assert
+  assert(result == -4);
+  assert(devices->readingCount == 1);
+  assert(devices->readings[0] == 95);
+  assert(devices->flags == (ONLINE | HAS_DATA | ALARM));
+
+  // Act
+  result = addReading(devices, -1);
+
+  // Assert
+  assert(result == -4);
+  assert(devices->readingCount == 1);
+  assert(devices->readings[0] == 95);
+  assert(devices->flags == (ONLINE | HAS_DATA | ALARM));
+}
+
 int main(void)
 {
   test_register_success();
@@ -241,4 +308,6 @@ int main(void)
   test_print_flags();
   test_add_readings();
   test_add_reading_offline();
+  test_add_reading_maintenance();
+  test_add_reading_full();
 }
