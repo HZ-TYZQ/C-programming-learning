@@ -298,6 +298,44 @@ static void test_add_reading_invalid_value(void)
   assert(devices->flags == (ONLINE | HAS_DATA | ALARM));
 }
 
+static void test_calculate_stats(void)
+{
+  // Arrange
+  struct Device device[MAX_DEVICES] = {0};
+  struct ReadingStats stats[3] = {0};
+  device->readings[0] = 80;
+  device->readings[1] = 20;
+  device->readings[2] = 95;
+  device->readings[3] = 50;
+  device->readingCount = 4;
+  (device + 2)->readings[0] = 80;
+  (device + 2)->readingCount = 1;
+
+  // Act
+  stats[0] = calculateStats(device);
+  stats[1] = calculateStats(device + 1);
+  stats[2] = calculateStats(device + 2);
+
+  // Assert
+  assert(stats[0].count == 4);
+  assert(stats[0].sum == 245);
+  assert(stats[0].maximum == 95);
+  assert(stats[0].minimum == 20);
+  assert(stats[0].average == 61.25);
+
+  assert(stats[1].count == 0);
+  assert(stats[1].sum == 0);
+  assert(stats[1].maximum == 0);
+  assert(stats[1].minimum == 0);
+  assert(stats[1].average == 0);
+
+  assert(stats[2].count == 1);
+  assert(stats[2].sum == 80);
+  assert(stats[2].maximum == 80);
+  assert(stats[2].minimum == 80);
+  assert(stats[2].average == 80);
+}
+
 int main(void)
 {
   test_register_success();
@@ -310,4 +348,6 @@ int main(void)
   test_add_reading_offline();
   test_add_reading_maintenance();
   test_add_reading_full();
+  test_add_reading_invalid_value();
+  test_calculate_stats();
 }
