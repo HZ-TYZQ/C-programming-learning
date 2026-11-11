@@ -42,8 +42,7 @@ int main(void)
   {
     for (int col = 0; col < size; col++)
     {
-      if (scanf("%d", &image1[row][col]) != 1 || image1[row][col] < 0 ||
-          image1[row][col] > 255)
+      if (scanf("%d", &image1[row][col]) != 1)
       {
         printf("Invalid image input.\n");
         return 0;
@@ -55,8 +54,20 @@ int main(void)
   {
     for (int col = 0; col < size; col++)
     {
-      if (scanf("%d", &image2[row][col]) != 1 || image2[row][col] < 0 ||
-          image2[row][col] > 255)
+      if (scanf("%d", &image2[row][col]) != 1)
+      {
+        printf("Invalid image input.\n");
+        return 0;
+      }
+    }
+  }
+
+  for (int row = 0; row < size; row++)
+  {
+    for (int col = 0; col < size; col++)
+    {
+      if (image1[row][col] < 0 || image1[row][col] > 255 ||
+          image2[row][col] < 0 || image2[row][col] > 255)
       {
         printf("Invalid image input.\n");
         return 0;
