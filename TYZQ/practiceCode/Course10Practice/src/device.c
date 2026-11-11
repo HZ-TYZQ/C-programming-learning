@@ -189,7 +189,7 @@ int compareById(const struct Device *device1, const struct Device *device2)
 {
   if (device1->id < device2->id)
   {
-    return -1;
+    return 0;
   }
   else if (device1->id > device2->id)
   {
@@ -205,7 +205,7 @@ int compareByAverage(const struct Device *device1, const struct Device *device2)
 {
   if (device1->readingCount != 0 && device2->readingCount == 0)
   {
-    return -1;
+    return 0;
   }
   else if (device1->readingCount == 0 && device2->readingCount != 0)
   {
@@ -221,7 +221,7 @@ int compareByAverage(const struct Device *device1, const struct Device *device2)
 
   if (stats1.average > stats2.average)
   {
-    return -1;
+    return 0;
   }
   else if (stats1.average < stats2.average)
   {
@@ -247,5 +247,106 @@ void sortDevices(struct Device *devices, int count,
         devices[j + 1] = temp;
       }
     }
+  }
+}
+
+void printDevice(const struct Device *device)
+{
+  printf("ID: %d\n", device->id);
+  printf("Name: %s\n", device->name);
+  printf("Readings: %d\n", device->readingCount);
+  printf("State: ");
+
+  if ((device->flags & ONLINE) == 0)
+  {
+    printf("OFFLINE");
+  }
+  else
+  {
+    printf("ONLINE");
+  }
+
+  printf(" | ");
+
+  if ((device->flags & MAINTENANCE) == 0)
+  {
+    printf("MAINTENANCE_OFF");
+  }
+  else
+  {
+    printf("MAINTENANCE_ON");
+  }
+
+  printf(" | ");
+
+  if ((device->flags & ALARM) == 0)
+  {
+    printf("ALARM_OFF");
+  }
+  else
+  {
+    printf("ALARM_ON");
+  }
+
+  printf(" | ");
+
+  if ((device->flags & HAS_DATA) == 0)
+  {
+    printf("NO_DATA");
+  }
+  else
+  {
+    printf("HAS_DATA");
+  }
+
+  printf("\n");
+
+  printf("Flags: ");
+  printFlags(device->flags);
+  printf("\n");
+}
+
+void printAllDevices(const struct Device *devices, int count)
+{
+  if (count == 0)
+  {
+    printf("No devices.\n");
+    return;
+  }
+
+  for (int i = 0; i < count; i++)
+  {
+    printDevice((devices + i));
+  }
+}
+
+void printDeviceReport(const struct Device *device)
+{
+  printDevice(device);
+
+  struct ReadingStats stats = calculateStats(device);
+
+  printf("Sum: %d\n", stats.sum);
+
+  if (stats.count == 0)
+  {
+    printf("No readings.\n");
+    printf("Average: N/A\n");
+    printf("Minimum: N/A\n");
+    printf("Maximum: N/A\n");
+    return;
+  }
+  else
+  {
+    for (int i = 0; i < device->readingCount; i++)
+    {
+      printf("%d ", device->readings[i]);
+    }
+
+    printf("\n");
+
+    printf("Average: %.2f\n", stats.average);
+    printf("Minimum: %d\n", stats.minimum);
+    printf("Maximum: %d\n", stats.maximum);
   }
 }

@@ -1,12 +1,9 @@
 CC = gcc
 CFLAGS = -std=c11 -Wall -Wextra -Wpedantic -g
 
-TARGET = builds/test_ldm
-OBJECTS = builds/device.o builds/test.o
+.PHONY: all test clean run
 
-.PHONY: all test clean
-
-all: $(TARGET)
+all: builds/ldm builds/test_ldm
 
 # Compile device.c
 builds/device.o: src/device.c src/device.h
@@ -18,14 +15,32 @@ builds/test.o: src/test.c src/device.h
 	mkdir -p builds
 	$(CC) $(CFLAGS) -c $< -o $@
 
-# Link object files
-$(TARGET): $(OBJECTS)
+# Compile main.c
+builds/main.o: src/main.c src/device.h src/input.h
+	mkdir -p builds
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# Compile input.c
+builds/input.o: src/input.c src/input.h
+	mkdir -p builds
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# Link object files(test)
+builds/test_ldm: builds/test.o builds/device.o
+	$(CC) $(CFLAGS) -o $@ $^
+
+#Link object files(build)
+builds/ldm: builds/main.o builds/device.o builds/input.o
 	$(CC) $(CFLAGS) -o $@ $^
 
 # Run tests
-test: $(TARGET)
-	./$(TARGET)
+test: builds/test_ldm
+	./builds/test_ldm
+
+# Run build
+run: builds/ldm
+	./builds/ldm
 
 # Remove build artifacts
 clean:
-	rm -f $(TARGET) $(OBJECTS)
+	rm -f builds/*.o builds/test_ldm builds/ldm

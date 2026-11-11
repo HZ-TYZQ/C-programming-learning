@@ -59,4 +59,10 @@ int compareByAverage(const struct Device *device1,
 void sortDevices(struct Device *devices, int count,
                  int (*compare)(const struct Device *, const struct Device *));
 
+void printDevice(const struct Device *device);
+
+void printAllDevices(const struct Device *devices, int count);
+
+void printDeviceReport(const struct Device *device);
+
 #endif /* DEVICE_H */
