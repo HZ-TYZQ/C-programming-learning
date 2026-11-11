@@ -200,3 +200,52 @@ int compareById(const struct Device *device1, const struct Device *device2)
     return 0;
   }
 }
+
+int compareByAverage(const struct Device *device1, const struct Device *device2)
+{
+  if (device1->readingCount != 0 && device2->readingCount == 0)
+  {
+    return -1;
+  }
+  else if (device1->readingCount == 0 && device2->readingCount != 0)
+  {
+    return 1;
+  }
+  else if (device1->readingCount == 0 && device2->readingCount == 0)
+  {
+    return compareById(device1, device2);
+  }
+
+  struct ReadingStats stats1 = calculateStats(device1);
+  struct ReadingStats stats2 = calculateStats(device2);
+
+  if (stats1.average > stats2.average)
+  {
+    return -1;
+  }
+  else if (stats1.average < stats2.average)
+  {
+    return 1;
+  }
+  else
+  {
+    return compareById(device1, device2);
+  }
+}
+
+void sortDevices(struct Device *devices, int count,
+                 int (*compare)(const struct Device *, const struct Device *))
+{
+  for (int i = 0; i < count - 1; i++)
+  {
+    for (int j = 0; j < count - i - 1; j++)
+    {
+      if (compare(&devices[j], &devices[j + 1]) > 0)
+      {
+        struct Device temp = devices[j];
+        devices[j] = devices[j + 1];
+        devices[j + 1] = temp;
+      }
+    }
+  }
+}

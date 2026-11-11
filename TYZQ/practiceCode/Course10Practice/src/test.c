@@ -430,6 +430,51 @@ static void test_compare_by_id(void)
   assert(result == 0);
 }
 
+static void test_sort_by_id(void)
+{
+  // Arrange
+  struct Device devices[4] = {
+      {.id = 103, .name = "Sensor C"},
+      {.id = 101, .name = "Sensor A"},
+      {.id = 104, .name = "Sensor D"},
+      {.id = 102, .name = "Sensor B"},
+  };
+
+  // Act
+  sortDevices(devices, 4, compareById);
+
+  // Assert
+  assert(devices[0].id == 101);
+  assert(devices[1].id == 102);
+  assert(devices[2].id == 103);
+  assert(devices[3].id == 104);
+  assert(strcmp(devices[0].name, "Sensor A") == 0);
+  assert(strcmp(devices[1].name, "Sensor B") == 0);
+  assert(strcmp(devices[2].name, "Sensor C") == 0);
+  assert(strcmp(devices[3].name, "Sensor D") == 0);
+}
+
+static void test_sort_by_average(void)
+{
+  // Arrange
+  struct Device devices[5] = {
+      {.id = 103, .readingCount = 2, .readings[0] = 80, .readings[1] = 90},
+      {.id = 101, .readingCount = 2, .readings[0] = 60, .readings[1] = 80},
+      {.id = 104, .readingCount = 0},
+      {.id = 102, .readingCount = 2, .readings[0] = 90, .readings[1] = 80},
+      {.id = 105, .readingCount = 1, .readings[0] = 0}};
+
+  // Act
+  sortDevices(devices, 5, compareByAverage);
+
+  // Assert
+  assert(devices[0].id == 102);
+  assert(devices[1].id == 103);
+  assert(devices[2].id == 101);
+  assert(devices[3].id == 105);
+  assert(devices[4].id == 104);
+}
+
 int main(void)
 {
   test_register_success();
@@ -447,4 +492,6 @@ int main(void)
   test_matches_flags();
   test_filter_devices();
   test_compare_by_id();
+  test_sort_by_id();
+  test_sort_by_average();
 }

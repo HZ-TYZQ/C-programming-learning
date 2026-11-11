@@ -53,6 +53,9 @@ int filterDevices(const struct Device *devices, int count, unsigned int mask,
 
 int compareById(const struct Device *device1, const struct Device *device2);
 
+int compareByAverage(const struct Device *device1,
+                     const struct Device *device2);
+
 void sortDevices(struct Device *devices, int count,
                  int (*compare)(const struct Device *, const struct Device *));
 
