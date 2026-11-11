@@ -358,6 +358,10 @@ static void test_matches_flags(void)
   result = matchesFlags(device, ONLINE | HAS_DATA, 1);
 
   assert(result == 1);
+
+  result = matchesFlags(device, ONLINE, 1);
+
+  assert(result == 1);
 }
 
 int main(void)
