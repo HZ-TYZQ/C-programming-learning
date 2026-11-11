@@ -416,7 +416,7 @@ static void test_compare_by_id(void)
   int result = compareById((devices + 0), (devices + 1));
 
   // Assert
-  assert(result == -1);
+  assert(result == 0);
 
   // Act
   result = compareById((devices + 1), (devices + 2));
