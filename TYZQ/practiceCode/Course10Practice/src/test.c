@@ -393,7 +393,7 @@ static void test_filter_devices(void)
   assert(matchedIndices[0] == 2);
   assert(matchedIndices[1] == 3);
 
-  // Assert
+  // Arrange
   mask = MAINTENANCE | ALARM;
 
   // Act && Assert: ALL
