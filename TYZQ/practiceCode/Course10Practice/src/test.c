@@ -402,6 +402,34 @@ static void test_filter_devices(void)
   assert(result == 0);
 }
 
+static void test_compare_by_id(void)
+{
+  // Arrange
+  struct Device devices[3] = {
+      {.id = 101},
+      {.id = 105},
+      {.id = 103},
+  };
+
+  // Act
+  int result = compareById((devices + 0), (devices + 1));
+
+  // Assert
+  assert(result == -1);
+
+  // Act
+  result = compareById((devices + 1), (devices + 2));
+
+  // Assert
+  assert(result == 1);
+
+  // Act
+  result = compareById((devices + 2), (devices + 2));
+
+  // Assert
+  assert(result == 0);
+}
+
 int main(void)
 {
   test_register_success();
@@ -418,4 +446,5 @@ int main(void)
   test_calculate_stats();
   test_matches_flags();
   test_filter_devices();
+  test_compare_by_id();
 }

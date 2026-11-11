@@ -184,3 +184,19 @@ int filterDevices(const struct Device *devices, int count, unsigned int mask,
 
   return matchedCount;
 }
+
+int compareById(const struct Device *device1, const struct Device *device2)
+{
+  if (device1->id < device2->id)
+  {
+    return -1;
+  }
+  else if (device1->id > device2->id)
+  {
+    return 1;
+  }
+  else
+  {
+    return 0;
+  }
+}
