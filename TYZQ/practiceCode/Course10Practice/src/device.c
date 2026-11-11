@@ -167,3 +167,20 @@ int matchesFlags(const struct Device *device, unsigned int mask, int requireAll)
     }
   }
 }
+
+int filterDevices(const struct Device *devices, int count, unsigned int mask,
+                  int requireAll, int *matchedIndices)
+{
+  int matchedCount = 0;
+
+  for (int i = 0; i < count; i++)
+  {
+    if (matchesFlags((devices + i), mask, requireAll))
+    {
+      matchedIndices[matchedCount] = i;
+      matchedCount++;
+    }
+  }
+
+  return matchedCount;
+}

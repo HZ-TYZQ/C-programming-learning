@@ -364,6 +364,44 @@ static void test_matches_flags(void)
   assert(result == 1);
 }
 
+static void test_filter_devices(void)
+{
+  // Arrange
+  struct Device devices[4] = {
+      {.id = 101, .flags = ONLINE | HAS_DATA},
+      {.id = 102, .flags = MAINTENANCE},
+      {.id = 103, .flags = ONLINE | ALARM},
+      {.id = 104, .flags = ONLINE | HAS_DATA | ALARM},
+  };
+
+  int matchedIndices[MAX_DEVICES];
+
+  unsigned int mask = ONLINE | ALARM;
+
+  // Act && Assert: ANY
+  int result = filterDevices(devices, 4, mask, 0, matchedIndices);
+
+  assert(result == 3);
+  assert(matchedIndices[0] == 0);
+  assert(matchedIndices[1] == 2);
+  assert(matchedIndices[2] == 3);
+
+  // Act && Assert: ALL
+  result = filterDevices(devices, 4, mask, 1, matchedIndices);
+
+  assert(result == 2);
+  assert(matchedIndices[0] == 2);
+  assert(matchedIndices[1] == 3);
+
+  // Assert
+  mask = MAINTENANCE | ALARM;
+
+  // Act && Assert: ALL
+  result = filterDevices(devices, 4, mask, 1, matchedIndices);
+
+  assert(result == 0);
+}
+
 int main(void)
 {
   test_register_success();
@@ -379,4 +417,5 @@ int main(void)
   test_add_reading_invalid_value();
   test_calculate_stats();
   test_matches_flags();
+  test_filter_devices();
 }

@@ -48,4 +48,8 @@ struct ReadingStats calculateStats(const struct Device *device);
 
 int matchesFlags(const struct Device *device, unsigned int mask,
                  int requireAll);
+
+int filterDevices(const struct Device *devices, int count, unsigned int mask,
+                  int requireAll, int *matchedIndices);
+
 #endif /* DEVICE_H */
