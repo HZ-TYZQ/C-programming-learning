@@ -12,7 +12,7 @@ static int readPosition(int count, int *position)
   while (1)
   {
     printf("Range: %d ~ %d\nExit: %d\n", 0, count, -1);
-    if (readInt("Choice: ", position) == 0)
+    if (readInt("Position: ", position) == 0)
     {
       return 0;
     }
@@ -37,7 +37,7 @@ int main(void)
   char last1 = '\0';
   char last2 = '\0';
   srand((unsigned int)time(NULL));
-  // TODO: Core functions.
+
   for (int i = 0; i < INITIAL_BALL_COUNT; i++)
   {
     char color = randomColor();
@@ -66,8 +66,8 @@ int main(void)
     int position = 0;
     char nextColor = randomColor();
 
-    printf("Round: %d\n", turn);
     printChain(head);
+    printf("Round: %d\n", turn);
     printf("Balls: %d\n", count);
     printf("Maximum: %d\n", MAX_BALL_COUNT);
     printf("Color: %c\n", nextColor);
