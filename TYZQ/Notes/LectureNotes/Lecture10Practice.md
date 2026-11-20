@@ -29,7 +29,7 @@ tags:
 >
 > - 题目：[`Course10Practice/exercise.md`](../../practiceCode/Course10Practice/exercise.md)
 > - 代码：[`device.h`](../../practiceCode/Course10Practice/src/device.h) · [`device.c`](../../practiceCode/Course10Practice/src/device.c) · [`main.c`](../../practiceCode/Course10Practice/src/main.c) · [`input.c`](../../practiceCode/Course10Practice/src/input.c) · [`test.c`](../../practiceCode/Course10Practice/src/test.c) · [`Makefile`](../../practiceCode/Course10Practice/Makefile)
-> - 关联：[[Lecture 10 - Structures and Bit Manipulation]] · [[SLSMS_综合实战项目笔记]] · [[SRMS_2.0_综合实战项目笔记]]
+> - 关联：[Lecture 10 - Structures and Bit Manipulation](Lecture10.md) · [SLSMS 综合实战项目笔记](Lecture8Practice.md) · [SRMS 2.0 综合实战项目笔记](Lecture9Practice.md)
 > - 本文按**实际题面约定**记录；尤其排序回调沿用 Course8 的 `shouldSwap`（`0`／非零）形式，而不是强制 `-1`／`0`／`1` 三态比较器。
 > - 本次对话中多轮 `make test` 由学习者报告通过；仓库源码已审阅，但不等同于已经在学习者机器上完成 `exercise.md` 中每一项端到端验收。
 

@@ -618,4 +618,4 @@ calculateStats(&students[targetIndex],
 
 **阶段总结：** 这次练习真正完成了从“单个函数能运行”到“有稳定接口、分层输入、可独立测试、可集成菜单的小型 C 项目”的转变。保留每次真实错误、边界讨论和测试证据，比给最终代码附上一堆空泛的规范更有复习价值。
 
-**相关资料：** [`student.h`](../../practiceCode/Course9Practice/src/student.h) · [`input.h`](../../practiceCode/Course9Practice/src/input.h) · [`SLSMS_综合实战项目笔记.md`](SLSMS_综合实战项目笔记.md) · [`输入健壮性专题笔记`](../../extracurricularLearning/inputRobustnessInC/Phase1-3Note.md) · [仓库 `AGENTS.md`](../../../AGENTS.md)
+**相关资料：** [`student.h`](../../practiceCode/Course9Practice/src/student.h) · [`input.h`](../../practiceCode/Course9Practice/src/input.h) · [SLSMS 综合实战项目笔记](Lecture8Practice.md) · [`输入健壮性专题笔记`](../../extracurricularLearning/inputRobustnessInC/Phase1-3Note.md) · [仓库 `AGENTS.md`](../../../AGENTS.md)

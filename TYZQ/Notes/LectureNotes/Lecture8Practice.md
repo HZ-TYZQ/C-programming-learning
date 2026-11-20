@@ -316,4 +316,4 @@ gcc -std=c11 -Wall -Wextra -Wpedantic -Werror \
 5. 为什么排序后同一读数的搜索下标可能改变，而平均值不变？
 6. 为什么 `bubbleSort(data, count, shouldSwapAscending)` 正确，而传 `shouldSwapAscending(10,20)` 不正确？
 
-**继续学习：** 代码保留在 [`src/SLSMS.c`](../../practiceCode/Course8Practice/src/SLSMS.c)；Lecture 8 后半部分的理论复习见 [`Lecture8_下_函数指针与指针安全_学习笔记.md`](../../Notes/LectureNotes/Lecture8_下_函数指针与指针安全_学习笔记.md)。
+**继续学习：** 代码保留在 [`src/SLSMS.c`](../../practiceCode/Course8Practice/src/SLSMS.c)；Lecture 8 后半部分的理论复习见 [Lecture 8（下）函数指针与指针安全](Lecture8_2.md)。

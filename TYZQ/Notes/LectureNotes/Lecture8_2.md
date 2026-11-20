@@ -3,7 +3,7 @@
 # Lecture 8（下）学习笔记：Function Pointers、Callbacks、const 与 Dangling Pointers
 
 **课程：** UESTC1005 — Introductory Programming  
-**学习范围：** 接续 [`Lecture8_上_指针_学习笔记.md`](Lecture8_上_指针_学习笔记.md)，整理 Lecture 8 剩余知识点及当次练习。  
+**学习范围：** 接续 [Lecture 8（上）指针笔记](Lecture8_1.md)，整理 Lecture 8 剩余知识点及当次练习。\
 **整理日期：** 2026-11-02  
 **资料依据：** 本项目的 UESTC1005 Lecture 8 课件汇编、前半部分学习笔记和本次实际问答／编程练习。  
 **范围约定：** 标记为**【课件内容】**的部分以课程材料为依据；**【实战巩固】**来自学习对话或项目；**【补充辨析】**是学习时进一步澄清的标准与编程细节。本笔记不包含历年真题，真题留待期末复习。
@@ -19,7 +19,7 @@
 | Callbacks            | 已完成基础与编程练习       | `callbackPractice.c` 与 SLSMS 自定义排序                                                           |
 | `const` and Pointers | 已完成内存地址辨析         | 比较 `const int *p`、`int *const p`                                                                |
 | Dangling Pointers    | 已完成作用域和生命周期练习 | 内外层变量遮蔽与悬垂指针判断                                                                       |
-| Lecture 8 综合项目   | 主体完成                   | [SLSMS 综合实战项目笔记](SLSMS_综合实战项目笔记.md) |
+| Lecture 8 综合项目   | 主体完成                   | [SLSMS 综合实战项目笔记](Lecture8Practice.md) |
 
 > **进度说明：** 上半部分旧笔记的“Reverse an Array 尚未完成／下次从这里开始”记录的是当时的进度；现在此项已经完成。历年真题统一安排在期末复习。
 
@@ -315,7 +315,7 @@ printf("%d\n", *p);  // 10
 - [ ] 历年真题：**期末复习**
 - [ ] 后续课程（Lecture 9 起）：按教学顺序继续
 
-**关联代码：** [`SLSMS.c`](../../practiceCode/Course8Practice/src/SLSMS.c)；详见 [Course 8 Practice 笔记](SLSMS_综合实战项目笔记.md)。
+**关联代码：** [`SLSMS.c`](../../practiceCode/Course8Practice/src/SLSMS.c)；详见 [Course 8 Practice 笔记](Lecture8Practice.md)。
 
 ## 8. 复习自测（不附答案）
 

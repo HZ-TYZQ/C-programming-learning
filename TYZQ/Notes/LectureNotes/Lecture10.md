@@ -27,17 +27,17 @@ tags:
 
 ## 0. 本讲知识地图
 
-- [[#1. Pass by Value 与通过指针修改调用者变量]]
-- [[#2. 多输出函数：输出参数 vs. 返回结构体]]
-- [[#3. 为什么要用指针传递结构体？]]
-- [[#4. `const` 类型限定符]]
-- [[#5. 位运算符：AND、OR、XOR、NOT]]
-- [[#6. XOR 的两类经典应用]]
-- [[#7. 位移运算 `<<` 与 `>>`]]
-- [[#8. Bit Fields / Flags 与位掩码]]
-- [[#9. 本次学习中真正弄懂的易错点]]
-- [[#10. 考前速查表]]
-- [[#11. 自测题与答案]]
+- [1. Pass by Value 与通过指针修改调用者变量](#1-pass-by-value-与通过指针修改调用者变量)
+- [2. 多输出函数：输出参数 vs. 返回结构体](#2-多输出函数输出参数-vs-返回结构体)
+- [3. 为什么要用指针传递结构体？](#3-为什么要用指针传递结构体)
+- [4. `const` 类型限定符](#4-const-类型限定符)
+- [5. 位运算符：AND、OR、XOR、NOT](#5-位运算符andorxornot)
+- [6. XOR 的两类经典应用](#6-xor-的两类经典应用)
+- [7. 位移运算 `<<` 与 `>>`](#7-位移运算--与-)
+- [8. Bit Fields / Flags 与位掩码](#8-bit-fields--flags-与位掩码)
+- [9. 本次学习中真正弄懂的易错点](#9-本次学习中真正弄懂的易错点)
+- [10. 考前速查表](#10-考前速查表)
+- [11. 自测题与答案](#11-自测题与答案)
 
 ---
 
@@ -782,7 +782,7 @@ struct Flags {
 - [ ] **Lecture 11：Linked Lists（链表）**：结构体节点、`next` 指针、动态内存分配、链表插入与删除。
 - [ ] **Lecture 12：File Input/Output**：文件读写、错误处理与数据持久化。
 
-**复习关联**：[[Lecture 8]]（Pointers） · [[Lecture 9]]（Strings and Structures） · [[Lecture 11]]（Linked Lists）
+**复习关联**：Lecture 8（Pointers，[上篇](Lecture8_1.md) · [下篇](Lecture8_2.md)） · [Lecture 9 综合练习](Lecture9Practice.md)（Strings and Structures） · [Lecture 11](Lecture11.md)（Linked Lists）
 
 > [!note] 课程顺序说明
 > 本学期课程表将 Lecture 11 安排为 Linked Lists、Lecture 12 安排为 File Input/Output；旧版课件合集中下一讲的章节安排可能不同。后续以本学期安排为准。
