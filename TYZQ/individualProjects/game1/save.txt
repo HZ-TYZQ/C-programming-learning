@@ -1,0 +1,9 @@
+NEXT_STOP_BIRTHDAY_V1
+day 2
+phase 0
+planet 2
+trips_left 2
+money 5
+cargo_cap 5
+cargo 4 0 0 0 0
+flags 18
